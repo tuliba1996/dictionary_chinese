@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="banner">
+      <div class="container">
+        <el-avatar shape="square" :size="100">
+          <img src="../assets/images/panda.png" />
+        </el-avatar>
+        <h1 class="logo">PANDA CHINESE</h1>
+      </div>
+    </div>
+  </div>
+  <div class="page-container">
+    <search-text v-if="!isAuth" />
+    <topic-list v-if="isAuth" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import SearchText from "../components/SearchText";
+import TopicList from "../components/TopicList";
+import { useStore } from "vuex";
+import { computed } from "vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    SearchText,
+    TopicList,
+  },
+  setup() {
+    const store = useStore();
+    const isAuth = computed(() => store.getters.isAuthorized);
+
+    return {
+      isAuth,
+    };
   },
 };
 </script>

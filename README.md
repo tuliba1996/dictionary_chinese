@@ -1,24 +1,38 @@
-# dictionary_chinese
+# Panda Chinese
 
-## Project setup
+## Getting started
+
 ```
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+# Development
 yarn serve
-```
 
-### Compiles and minifies for production
-```
+# Build dist
 yarn build
+
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+# What works?
+### Front end
+- Vue 3
+- Composition API
+- Vue router
+- Vuex
+- ESLint
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Backend 
+
+- Python 3.8
+- Django 
+- Django Rest Framework
+- SQLite3
+
+# Functions
+
+- Login (JWT)
+- Register
+- Dictionary Chinese
+- Topic (Create, Delete)
+- Profile
+
