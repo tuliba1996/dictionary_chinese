@@ -20,6 +20,7 @@ import SearchText from "../components/SearchText";
 import TopicList from "../components/TopicList";
 import { useStore } from "vuex";
 import { computed } from "vue";
+import { getItems } from "../services/fireStore";
 export default {
   name: "Home",
   components: {
@@ -30,6 +31,11 @@ export default {
     const store = useStore();
     const isAuth = computed(() => store.getters.isAuthorized);
 
+    const getData = async () => {
+      const items = await getItems("topic");
+      console.log("items", items);
+    }
+    getData();
     return {
       isAuth,
     };
